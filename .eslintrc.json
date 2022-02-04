@@ -1,0 +1,52 @@
+{
+    "root": true,
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "plugin:react/recommended",
+      "airbnb",
+      "airbnb-typescript",
+      "plugin:@typescript-eslint/recommended",
+      "airbnb/hooks",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      "plugin:storybook/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module",
+      "project": ["./tsconfig.json"]
+    },
+    "plugins": ["react", "@typescript-eslint"],
+    "rules": {
+      "import/prefer-default-export": ["off"],
+      "import/no-default-export": ["warn"],
+      "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }],
+      "react/jsx-props-no-spreading": ["off"],
+      "padding-line-between-statements": [
+        "error",
+        { "blankLine": "always", "prev": "*", "next": ["if", "for", "return"] },
+        {
+          "blankLine": "always",
+          "prev": ["import"],
+          "next": ["const", "function"]
+        },
+        { "blankLine": "always", "prev": ["export"], "next": ["export"] },
+        { "blankLine": "never", "prev": ["import"], "next": ["import"] },
+        {
+          "blankLine": "always",
+          "prev": ["const", "let", "var"],
+          "next": ["multiline-const"]
+        }
+      ],
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+      "react/require-default-props": ["off"]
+    }
+  }
+  
